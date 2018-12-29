@@ -1,0 +1,58 @@
+<div class="row m-1 justify-content-center">
+    <div class="col-xs-12 bg-light text-center btn-block border border-info rounded">
+        <h3>{{title}}</h3>
+        {{#if err}}
+        <div class="alert alert-danger">
+            <h4>error in deletion: {{err}}</h4>
+        </div>
+        {{/if}}
+        {{#if msg}}
+        <div class="alert alert-danger">
+            <h4>{{msg}} and result:  {{result}}</h4>
+        </div>
+        {{/if}}
+        {{#if docRes}}
+        <div class="alert alert-success">
+            <h3>{{docRes}}</h3>
+        </div>
+        {{/if}}
+    </div>
+</div>
+<!-- scores below --> 
+{{# each scores }}
+<div class="row justify-content-center">
+    {{# each this }}
+    <div class="col-lg-4 col-md-12 mt-1 mb-1 text-center">
+    <div class="img-thumbnail border border-primary rounded">
+        <div class="caption">
+        <h3>{{ this.eventName }}</h3>
+        <p class="description">{{ this.eventType }}, <span> {{ this.format }}</span></p>
+        <p class="description">{{ this.sportGender }}</p>
+        <p class="description">{{ this.dateOfEvent }}</p>
+        {{#if this.winningTeam }}
+        <p class="description">{{ this.winningTeam }}, <span>{{ this.collegeNameTeamWinner }}</span>
+        <div>Vs</div>
+        {{ this.otherTeam }}, <span>{{ this.collegeNameTeamOther }}</span></p>
+        {{/if}}
+        {{#if this.winningTeam }}
+        <p class="description">Winner: {{ this.winningTeam }}, <span>{{ this.collegeNameTeamWinner }}</p>
+        {{/if}}
+        {{#if this.winningParticpant1 }}
+        <p class="description">Winner: {{ this.winningParticpant1 }}, <span>{{ this.collegeNameWinParticipant1 }}</p>
+        {{/if}}
+        {{#if this.winningParticpant2 }}
+        <p class="description">First Runner Up: {{ this.winningParticpant2 }}, <span>{{ this.collegeNameWinParticipant2 }}</p>
+        {{/if}}
+        {{#if this.winningParticpant3 }}
+        <p class="description">Second Runner Up: {{ this.winningParticpant3 }}, <span>{{ this.collegeNameWinParticipant3 }}</p>
+        {{/if}}
+        <hr>
+        <p class="description">{{ this.someDescription }}</p>
+    <!--UPDATION OF SCORES-->
+        <a class="btn btn-block btn-secondary" href="/admin/scores/update/{{this._id}}">Update this</a>
+        </div>
+    </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}

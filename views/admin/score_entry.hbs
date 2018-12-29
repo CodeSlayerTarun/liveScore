@@ -1,0 +1,132 @@
+<h1>{{ message }}</h1>
+<div class="row justify-content-center">
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    {{# if hasErrors }}
+    <div class="alert alert-danger">
+    {{# each messages }}
+    <p>{{this}}</p>
+    {{/each}}
+    </div>
+    {{/if}}
+        <form class="" action="/admin/score_entry" method="POST">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="eventName">Name of the Event:</label>
+                <select class="form-control" id="eventName" name="eventName">
+                    <option>select-event</option>
+                    <option>Box Cricket</option>
+                    <option>Overarm Cricket</option>
+                    <option>Volleyball</option>
+                    <option>Throwball</option>
+                    <option>Badminton</option>
+                    <option>Table Tennis</option>
+                    <option>Carrom</option>
+                    <option>Chess</option>
+                    <option>Football</option>
+                    <option>Cricket</option>
+                    <option>Kho-Kho</option>
+                    <option>Kabaddi</option>
+                    <option>Athletics</option>
+                    <option>Tug Of War</option>
+                    <option>Dead lift</option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="format">Format:</label>
+                <select class="form-control" id="format" name="format">
+                    <option>select-format-of-selected-event</option>
+                    <option>Team of Same Class</option>
+                    <option>Departmental</option>
+                    <option>Singles</option>
+                    <option>100 M</option>
+                    <option>200 M</option>
+                    <option>Long Jump</option>
+                    <option>Below 65 KG</option>
+                    <option>65 KG - 70 KG</option>
+                    <option>75 KG - 85 KG</option>
+                    <option>85 KG And Above</option>
+                    <option>Doubles</option>
+                    <option>Team Of 3</option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-sm-6">
+                <label for="dateOfEvent">Date of the Event:</label>
+                <input type="date" id="dateOfEvent" name="dateOfEvent" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="eventType">Select Event Type:</label>
+                <select class="form-control" id="eventType" name="eventType">
+                    <option>INTER</option>
+                    <option>INTRA</option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sportGender">Sport Type:</label>
+                <select class="form-control" id="sportGender" name="sportGender">
+                    <option>Boys</option>
+                    <option>Girls</option>
+                    <option>Mixed</option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="matchGroup">Match(Team or Participants):</label>
+                <select class="form-control" id="matchGroup" name="matchGroup" onChange="changeMatchGroup(this)">
+                    <option>imp-select-match-group-team-or-participant</option>
+                    <option value="team" onclick="">Team</option>
+                    <option value="participant" onclick="">Participants</option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="group_team displayMatchGroup form-group">
+                <label for="winningTeam">Name Of The Winning Team:</label>
+                <input type="text" id="winningTeam" name="winningTeam" class="form-control">
+            </div>
+            <div class="group_team displayMatchGroup form-group">
+                <label for="collegeNameTeamWinner">College Name Of Winning Team:</label>
+                <input type="text" id="collegeNameTeamWinner" name="collegeNameTeamWinner" class="form-control">
+            </div>
+             <div class="group_team displayMatchGroup form-group">
+                <label for="otherTeam">Name Of The Other Team:</label>
+                <input type="text" id="otherTeam" name="otherTeam" class="form-control">
+            </div>
+            <div class="group_team displayMatchGroup form-group">
+                <label for="collegeNameTeamOther">College Name Of Team Other:</label>
+                <input type="text" id="collegeNameTeamOther" name="collegeNameTeamOther" class="form-control">
+            </div>
+            <div class="group_participant displayMatchGroup form-group">
+                <label for="winningParticpant1">Winning Participant Name:</label>
+                <input type="text" id="winningParticpant1" name="winningParticpant1" class="form-control">
+            </div>
+            <div class="group_participant displayMatchGroup form-group">
+                <label for="collegeNameWinParticipant1">College Name Of The Winning Partcipant:</label>
+                <input type="text" id="collegeNameWinParticipant1" name="collegeNameWinParticipant1" class="form-control">
+            </div>
+            <div class="group_participant displayMatchGroup form-group">
+                <label for="winningParticpant2">First Runner Up Name:</label>
+                <input type="text" id="winningParticpant2" name="winningParticpant2" class="form-control">
+            </div>
+            <div class="group_participant displayMatchGroup form-group">
+                <label for="collegeNameWinParticipant2">College Name Of The First Runner Up:</label>
+                <input type="text" id="collegeNameWinParticipant2" name="collegeNameWinParticipant2" class="form-control">
+            </div>
+            <div class="group_participant displayMatchGroup form-group">
+                <label for="winningParticpant3">Second Runner Up Name:</label>
+                <input type="text" id="winningParticpant3" name="winningParticpant3" class="form-control">
+            </div>
+            <div class="group_participant displayMatchGroup form-group">
+                <label for="collegeNameWinParticipant3">College Name Of The Second Runner Up:</label>
+                <input type="text" id="collegeNameWinParticipant3" name="collegeNameWinParticipant3" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="someDescription">Add Description:</label>
+                <input type="text" id="someDescription" name="someDescription" class="form-control">
+            </div>
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button class="btn btn-primary" type="submit">Add Score</button>
+        </form>
+    </div>
+</div>

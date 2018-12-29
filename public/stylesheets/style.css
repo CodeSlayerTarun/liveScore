@@ -1,0 +1,9 @@
+.row .img-thumbnail{
+    border: none;
+    outline: none;
+    height: 400px;
+}
+
+.displayMatchGroup{
+    display: none;
+}

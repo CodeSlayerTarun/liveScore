@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    {{# if hasErrors }}
+    <div class="alert alert-danger">
+    {{# each messages }}
+    <p>{{this}}</p>
+    {{/each}}
+    </div>
+    {{/if}}
+        </div>
+    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+        <form class="" id="form_match_maker" action="/admin/match_maker" method="POST">
+        <div class="form-group">
+            <label for="eventName">Name of the Event:</label>
+            <select class="form-control" id="eventName" name="eventName">
+                <option>select-event</option>
+                <option>Box Cricket</option>
+                <option>Overarm Cricket</option>
+                <option>Volleyball</option>
+                <option>Football</option>
+                <option>Tug Of War</option>
+                </select>
+        </div>
+            <!--Format Or Match type-->
+            <div class="form-group">
+            <label for="formatType">Format or Match Type: </label>
+            <select class="form-control" id="formatType" name="formatType">
+                <option>select-format-type</option>
+                <option>Departmental</option>
+                <option>Team By Same Class</option>
+                <option>Intra</option>
+            </select>
+            </div>
+            <!--Date Of The Match Group-->
+            <div class="form-group">
+            <label for="matchGroupDate">Date Of This Match Group: </label>
+            <input type="date" id="matchGroupDate" name="matchGroupDate" class="col-lg-6 form-control">
+            </div>
+            <!--Match Group Description-->
+            <div class="form-group">
+            <label for="matchGroupDesc">Add Some Description: </label>
+            <input type="text" id="matchGroupDesc" name="matchGroupDesc" placeholder="description" class="form-control">
+            </div>
+            <!--Group-->
+            <div class="form-group">
+            <label for="matchGroup">Group: </label>
+            <input type="text" id="matchGroup" name="matchGroup" placeholder="A / B / C / D" class="form-control">
+            </div>
+            <!--Number Of Match Pairs For The Group-->
+            <div class="form-group">
+            <label for="noMatchpairs">Select The Number Of Team Pairs For This Group: </label>
+            <input type="number" id="noMatchpairs" onchange="" name="noMatchpairs" placeholder="select number between 0 to 10" class=" form-control">
+            </div>
+            <!--Take Inputs Of Match Pairs-->
+            <div class="row justify-content-center col-lg-12">
+                <div><h4><u>Enter The Team Credentials (max = 10 Teams):</u></h4></div>
+            </div>
+            <div class="form-group mb-1">
+            <label for="teamPair11">Enter The Team Pair: </label>
+            <input type="text" id="teamPair11" name="teamPair11" placeholder="enter 1-1" class="mb-1 form-control">
+            <input type="text" id="teamPair12" name="teamPair12" placeholder="enter 1-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair21">Enter The Team Pair: </label>
+            <input type="text" id="teamPair21" name="teamPair21" placeholder="enter 2-1" class="mb-1 form-control">
+            <input type="text" id="teamPair22" name="teamPair22" placeholder="enter 2-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair31">Enter The Team Pair: </label>
+            <input type="text" id="teamPair31" name="teamPair31" placeholder="enter 3-1" class="mb-1 form-control">
+            <input type="text" id="teamPair32" name="teamPair32" placeholder="enter 3-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair41">Enter The Team Pair: </label>
+            <input type="text" id="teamPair41" name="teamPair41" placeholder="enter 4-1" class="mb-1 form-control">
+            <input type="text" id="teamPair42" name="teamPair42" placeholder="enter 4-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair51">Enter The Team Pair: </label>
+            <input type="text" id="teamPair51" name="teamPair51" placeholder="enter 5-1" class="mb-1 form-control">
+            <input type="text" id="teamPair52" name="teamPair52" placeholder="enter 5-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair61">Enter The Team Pair: </label>
+            <input type="text" id="teamPair61" name="teamPair61" placeholder="enter 6-1" class="mb-1 form-control">
+            <input type="text" id="teamPair62" name="teamPair62" placeholder="enter 6-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair71">Enter The Team Pair: </label>
+            <input type="text" id="teamPair71" name="teamPair71" placeholder="enter 7-1" class="mb-1 form-control">
+            <input type="text" id="teamPair72" name="teamPair72" placeholder="enter 7-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair81">Enter The Team Pair: </label>
+            <input type="text" id="teamPair81" name="teamPair81" placeholder="enter 8-1" class="mb-1 form-control">
+            <input type="text" id="teamPair82" name="teamPair82" placeholder="enter 8-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair91">Enter The Team Pair: </label>
+            <input type="text" id="teamPair91" name="teamPair91" placeholder="enter 9-1" class="mb-1 form-control">
+            <input type="text" id="teamPair92" name="teamPair92" placeholder="enter 9-2" class="mb-1 form-control">
+            </div>
+
+            <div class="form-group mb-1">
+            <label for="teamPair101">Enter The Team Pair: </label>
+            <input type="text" id="teamPair101" name="teamPair101" placeholder="enter 10-1" class="mb-1 form-control">
+            <input type="text" id="teamPair102" name="teamPair102" placeholder="enter 10-2" class="mb-1 form-control">
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button type="submit" class="btn btn-block btn-primary mb-3" value="Submit">Submit!!!</button> 
+       </form>
+    </div>
+</div>
+<script src="/javascripts/match_maker.js"></script>
