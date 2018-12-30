@@ -5,19 +5,15 @@ var Schema = mongoose.Schema;
 var Sports = new Schema ({
     eventName: {
         type: String,
-        required: true
     },
     format: {
         type: String,
-        required: true
     },
     dateOfEvent: {
         type: String ,
-        required: true
     },
     eventType: {
         type: String,
-        required: true
     },
     sportGender: {
         type: String

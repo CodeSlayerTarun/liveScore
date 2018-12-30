@@ -1,16 +1,16 @@
-<div class="row justify-content-center p-1 mt-2 mb-2">
+<div class="row justify-content-center p-1 rounded mt-2 mb-4">
 <div class="col-lg-3 col-md-12 bg-light">
     {{#if hasMatchs }}
-    <a href="/display/match_schedules" class="btn btn-block btn-basic">Reload!</a>
+    <a href="/display/match_schedules" class="btn btn-block btn-basic">Refresh!</a>
     {{/if}}
     <h6 class="text-muted text-center"><u>Event-Round-Group</u></h6>
     {{#each matchs}}
     <a class="nav-link text-muted text-center" href="/display/match_schedules/{{this._id}}">{{this.eventName}}-{{this.matchGroupDesc}}-{{this.matchGroup}}</a>
     {{/each}}
+    <hr>
 </div>
-<hr>
 <!--schedules-->
-<div class="col-lg-9 col-md-12 bg-light">
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 bg-light">
     <div class="row m-1">
         <div class="col-lg-12 col-md-12">
             <h5>Event: <strong>{{idSched.eventName}}</strong></h5>
@@ -18,7 +18,7 @@
     </div>
     <div class="row m-1">
         <div class="col-lg-6 col-md-12">
-            <p class="">Round: {{idSched.matchGroupDesc}}</p>
+            <p>Round: <span class="text-lowercase">{{idSched.matchGroupDesc}}</span></p>
         </div>
         <div class="col-lg-6 col-md-12">
             <p class=""><span class="">Type: </span>{{idSched.formatType}}</p>
@@ -26,22 +26,22 @@
     </div>
     <div class="row m-1">
         <div class="col-lg-6 col-md-6 col-sm-6">
-            <p class="">Match Group: <strong>{{idSched.matchGroup}}</strong></p>
+            <p class="">Match Group: <strong class="text-uppercase">{{idSched.matchGroup}}</strong></p>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <p class="">Date: {{idSched.matchGroupDate}}</p>
         </div>
     </div>
     <!--Table of schedules-->
-    <div class="row m-1 justify-content-center col-lg-12 text-center">
+    <div class="row m-1 justify-content-center card-text col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center border border-info rounded">
         <div class="col-xs-5 p-1 m-2">
-            <h6>Team one</h6>
+            <h6 >Team one</h6>
             <hr>
             {{#each idSched.teamPairList1}}
             {{#if this}}
-            <div class="row">
-                <div class=" col-lg-12">
-                    <p><strong>{{this}}</strong></p>
+            <div class="row m-0 p-0">
+                <div class="m-0 col-lg-12">
+                    <p class="m-0"><h6>{{this}}</h6></p>
                     <hr>
                 </div>
             </div>
@@ -53,9 +53,9 @@
             <hr>
             {{#each idSched.teamPairList1}}
             {{#if this}}
-            <div class="row">
-                <div class=" col-lg-12">
-                    <p>Vs</p>
+            <div class="row m-0 p-0">
+                <div class="m-0 col-lg-12">
+                    <p class="m-0"><h6>Vs</h6></p>
                     <hr>
                 </div>
             </div>
@@ -67,9 +67,9 @@
             <hr>
             {{#each idSched.teamPairList2}}
             {{#if this}}
-            <div class="row">
-                <div class=" col-lg-12">
-                    <p><strong>{{this}}</strong></p>
+            <div class="row m-0 p-0">
+                <div class="m-0 col-lg-12">
+                    <p class="m-0"><h6>{{this}}</h6></p>
                     <hr>
                 </div>
             </div>
