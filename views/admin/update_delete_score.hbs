@@ -20,18 +20,18 @@
 </div>
 <!-- scores below --> 
 {{# each scores }}
-<div class="row justify-content-center">
+<div class="row justify-content-center m-0">
     {{# each this }}
-    <div class="col-lg-4 col-md-12 mt-1 mb-1 text-center">
-    <div class="img-thumbnail border border-primary rounded">
-        <div class="caption">
+    <div class="col-lg-4 col-md-12 mt-1 mb-4 text-center">
+    <div class="img-thumbnail m-0 border border-primary rounded">
+        <div class="caption m-0">
         <h3>{{ this.eventName }}</h3>
         <p class="description">{{ this.eventType }}, <span> {{ this.format }}</span></p>
         <p class="description">{{ this.sportGender }}</p>
         <p class="description">{{ this.dateOfEvent }}</p>
         {{#if this.winningTeam }}
         <p class="description">{{ this.winningTeam }}, <span>{{ this.collegeNameTeamWinner }}</span>
-        <div>Vs</div>
+        <span>Vs.</span>
         {{ this.otherTeam }}, <span>{{ this.collegeNameTeamOther }}</span></p>
         {{/if}}
         {{#if this.winningTeam }}
@@ -49,7 +49,8 @@
         <hr>
         <p class="description">{{ this.someDescription }}</p>
     <!--UPDATION OF SCORES-->
-        <a class="btn btn-block btn-secondary" href="/admin/scores/update/{{this._id}}">Update this</a>
+        <p class="description"><a class="m-0 btn btn-block btn-secondary " href="/admin/scores/update/{{this._id}}">Update this</a>
+        </p>
         </div>
     </div>
     </div>

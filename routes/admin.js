@@ -99,7 +99,22 @@ router.post('/match_maker', isLoggedin, function(req, res, next){
         }
     })
 })
-
+//GET all schedules for deletion 
+router.get('/match_maker/delete_schedule', isLoggedin, function(req, res, next){
+    MatchMaker.find({}).sort({ "_id": -1 }).exec(function(err, docs){
+        var schedules = docs;
+        res.render('admin/delete_match_schedule', {schedules: schedules});
+    });
+});
+//GET (removing a match schedule from db)
+router.get('/match_maker/delete_schedule/:schedId', isLoggedin, function(req, res, next){
+    MatchMaker.findByIdAndRemove(req.params.schedId, function(err, doc){
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/admin/match_maker/delete_schedule');
+    })
+});
 
 // GET socres for UPDATION
 router.get('/scores/update', isLoggedin, function(req, res, next){

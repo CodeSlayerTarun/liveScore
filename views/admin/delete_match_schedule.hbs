@@ -1,0 +1,17 @@
+<div class="row mt-4 mb-4">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        {{#each schedules}}
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <a class="nav-link" href="/admin/match_maker/delete_schedule/{{this._id}}">
+            <span>{{this.eventName}}</span>-
+            <span>{{this.formatType}}</span>-
+            <span>{{this.matchGroupDesc}}</span>-
+            <span>{{this.matchGroup}}</span>-
+            <span>{{this.matchGroupDate}}</span>
+            </a>
+        </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
