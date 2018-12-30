@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     for(var i=0; i < docs.length; i+= chunkSize){
       scoresChunks.push(docs.slice(i, i + chunkSize));
     }
-    var nextPage = 2;
+    var nextPage = 1;
     //pasing the data to views
     res.render('home/index', {title: 'Live-Score Timeline:', scores: scoresChunks, nextPage: nextPage});
   })
@@ -46,6 +46,9 @@ router.get('/:pageNum', function(req, res, next){
     }
     if(pageNum == 1){
       prevPage = 0;
+    }
+    if(pageNum ==0 && prevPage ==0){
+      nextPage = 2;
     }
     if(pageNum == 0){
       pageNum = 1;

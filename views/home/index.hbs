@@ -1,42 +1,85 @@
 <div class="row m-1 justify-content-center">
-    <div class="col-xs-12 bg-light text-center btn-block border border-info rounded">
-        <h3>Live Score Timeline</h3>
+    <div class="col-xs-12 mb-1 p-0 bg-light text-center btn-block border border-info rounded">
+        <h3 class="text-info m-1 ">Live Score Timeline</h3>
     </div>
 </div>
 <!-- scores below --> 
 {{# each scores }}
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-1">
+    <div class="card-deck">
     {{# each this }}
-    <div class="col-lg-4 col-md-12 mt-1 mb-1 text-center">
-    <div class="img-thumbnail bg-light border border-primary rounded">
-        <div class="caption">
-        <h3>{{ this.eventName }}</h3>
-        <p class="description">{{ this.eventType }}, <span> {{ this.format }}</span></p>
-        <p class="description">{{ this.sportGender }}</p>
-        <p class="description">{{ this.dateOfEvent }}</p>
-        {{#if this.winningTeam }}
-        <p class="description">{{ this.winningTeam }}, <span>{{ this.collegeNameTeamWinner }}</span>
-        <div>Vs</div>
-        {{ this.otherTeam }}, <span>{{ this.collegeNameTeamOther }}</span></p>
+    <div class="card shadow text-info border-info mb-3" style="width: 18rem;">
+    <div class="card-header bg-transparent">
+        <div class="col-xs-9">
+        <h5 class="m-0">{{this.eventName}}</h5>
+        {{#if this.format}}
+        <span><p class="card-title m-0">{{this.format}}</p></span>
         {{/if}}
-        {{#if this.winningTeam }}
-        <p class="description">Winner: {{ this.winningTeam }}, <span>{{ this.collegeNameTeamWinner }}</p>
-        {{/if}}
-        {{#if this.winningParticpant1 }}
-        <p class="description">Winner: {{ this.winningParticpant1 }}, <span>{{ this.collegeNameWinParticipant1 }}</p>
-        {{/if}}
-        {{#if this.winningParticpant2 }}
-        <p class="description">First Runner Up: {{ this.winningParticpant2 }}, <span>{{ this.collegeNameWinParticipant2 }}</p>
-        {{/if}}
-        {{#if this.winningParticpant3 }}
-        <p class="description">Second Runner Up: {{ this.winningParticpant3 }}, <span>{{ this.collegeNameWinParticipant3 }}</p>
-        {{/if}}
-        <hr>
-        <p class="description">{{ this.someDescription }}</p>
         </div>
+        {{#if this.dateOfEvent}}
+        <div class="col-xs-3 m-0 p-0 float-right">
+            <p class="m-0 p-0">{{this.dateOfEvent}}</p>
+        </div>
+        {{/if}}
+    </div>
+    <div class="card-body bg-transparent ">
+    <h6 class="card-title">
+        {{#if this.eventType}}
+        <span>{{this.eventType}}, </span>
+        {{/if}}
+        {{#if this.sportGender}}
+        <span>{{this.sportGender}}</span>
+        {{/if}}
+    </h6>
+    <div class="card-text text-center">
+        {{#if this.winningTeam}}
+        <p class="m-0"><span>{{this.winningTeam}}, {{this.collegeNameTeamWinner}}</span></p>
+        <p class="m-0">Vs.</p>
+        {{/if}}
+        {{#if this.otherTeam}}
+        <p><span>{{this.otherTeam}}, {{this.collegeNameTeamOther}}</span></p>
+        {{/if}}
+    </div>
+    {{#if this.winningTeam}}
+    <div class="m-0 shadow card-text text-center border border-basic rounded">
+        <p class="m-0"><strong>Winner: </strong>
+        <small><strong>
+        <span>{{this.winningTeam}}, {{this.collegeNameTeamWinner}}</span>
+        </strong></small>
+        </p>
+    </div>
+    {{/if}}
+
+    <div class="m-0 shadow card-text text-center border border-basic rounded">
+        {{#if this.winningParticpant1}}
+        <small class="m-0 p-0"><strong>Winner:  </strong>
+        <h6><strong>
+        <span>{{this.winningParticpant1}}, </span><span>{{this.collegeNameWinParticipant1}}</span>
+        </strong></h6>
+        </small>
+        {{/if}}
+        {{#if this.winningParticpant2}}
+        <small class="m-0 p-0"><strong>First Runner Up: </strong>
+        <h6><strong>
+        <span>{{this.winningParticpant2}}, </span><span>{{this.collegeNameWinParticipant2}}</span>
+        </strong></h6>
+        </small>
+        {{/if}}
+        {{#if this.winningParticpant3}}
+        <small class="m-0 p-0"><strong>Second Runner Up: </strong>
+        <h6><strong>
+        <span>{{this.winningParticpant3}}, </span><span>{{this.collegeNameWinParticipant3}}</span>
+        </strong></h6>
+        </small>
+        {{/if}}
     </div>
     </div>
+    <div class="card-footer bg-transparent ">
+        <p class="m-0 font-weight-normal">{{this.someDescription}}</p>
+    </div>
+    </div>   
     {{/each}}
+</div>
 </div>
 {{/each}}
 <!--Pagination-->
@@ -59,7 +102,7 @@
             {{#if pageNum}}
             <span class="badge badge-primary">{{pageNum}}</span>
             {{else}}
-            <span><p>Page</p></span>
+            Page
             {{/if}}
             </a></li>
         <li class="page-item"><a class="page-link" href="/{{nextPage}}">

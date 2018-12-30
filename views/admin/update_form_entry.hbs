@@ -125,8 +125,8 @@
                 <input type="text" id="someDescription" name="someDescription" class="form-control">
             </div>
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            <button class="btn btn-primary" type="submit">Add Score</button>
+            <button class="btn btn-block btn-primary m-1" type="submit">Add Score</button>
         </form>
-        <a href="/admin/scores/update/delete/{{result._id}}" class="btn btn-block btn-danger">Remove this score</a>
+        <a href="/admin/scores/update/delete/{{result._id}}" class="m-1 btn btn-block btn-danger">Remove this score</a>
     </div>
 </div>
