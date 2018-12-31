@@ -5,7 +5,7 @@
     {{/if}}
     <h6 class="text-muted text-center"><u>Event-Round-Group</u></h6>
     {{#each matchs}}
-    <a class="nav-link text-muted text-center" href="/display/match_schedules/{{this._id}}">{{this.eventName}}-{{this.matchGroupDesc}}-{{this.matchGroup}}</a>
+    <a class="nav-link text-muted text-center" href="/display/match_schedules/{{this._id}}">{{this.eventName}}-<span class="text-lowercase">{{this.matchGroupDesc}}</span>-<span class="text-uppercase">{{this.matchGroup}}</span></a>
     {{/each}}
     <hr>
 </div>
@@ -41,7 +41,7 @@
             {{#if this}}
             <div class="row m-0 p-0">
                 <div class="m-0 col-lg-12">
-                    <small class="m-0 p-0">{{this}}</small>
+                    <small class="m-0 p-0 text-uppercase">{{this}}</small>
                     <hr class="m-1">
                 </div>
             </div>
@@ -69,7 +69,7 @@
             {{#if this}}
             <div class="row m-0 p-0">
                 <div class="m-0 col-lg-12">
-                    <small class="m-0 p-0">{{this}}</small>
+                    <small class="m-0 p-0 text-uppercase">{{this}}</small>
                     <hr class="m-1">
                 </div>
             </div>
