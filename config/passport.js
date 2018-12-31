@@ -76,7 +76,13 @@ passport.use('local.signin', new LocalStrategy({
         });
         return done(null, false, req.flash('error', messages))
     }
-    if ( !(email == 'as@gmail.com' || email == 'tarun20@gmail.com')){
+    if ( !(email == 'as@gmail.com' ||
+           email == 'tarun20@gmail.com' ||
+           email == 'admin1@gmail.com' ||
+           email == 'admin2@gmail.com' ||
+           email == 'admin3@gmail.com' ||
+           email == 'admin4@gmail.com' 
+           )){
         var messages = ['No user other than admin allowed here.'];
         return done(null, false, req.flash('error', messages))
     }
