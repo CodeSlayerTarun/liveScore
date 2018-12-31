@@ -33,44 +33,44 @@
         </div>
     </div>
     <!--Table of schedules-->
-    <div class="row m-1 justify-content-center card-text col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center border border-info rounded">
-        <div class="col-xs-5 p-1 m-2">
-            <h6 >Team one</h6>
-            <hr>
+    <div class="row mx-1 mt-1 mb-2 justify-content-center card-text col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center border border-info rounded">
+        <div class="mt-1 mb-2 col-xs-3 p-0 m-0">
+            <h6>Team one</h6>
+            <hr class="m-1">
             {{#each idSched.teamPairList1}}
             {{#if this}}
             <div class="row m-0 p-0">
                 <div class="m-0 col-lg-12">
-                    <p class="m-0"><h6>{{this}}</h6></p>
-                    <hr>
+                    <small class="m-0 p-0">{{this}}</small>
+                    <hr class="m-1">
                 </div>
             </div>
             {{/if}}
             {{/each}}
         </div>
-        <div class="col-xs-2 p-1 m-2">
+        <div class="mt-1 mb-2 col-xs-1 p-0 m-0">
             <h6>Vs</h6>
-            <hr>
-            {{#each idSched.teamPairList1}}
-            {{#if this}}
-            <div class="row m-0 p-0">
-                <div class="m-0 col-lg-12">
-                    <p class="m-0"><h6>Vs</h6></p>
-                    <hr>
-                </div>
-            </div>
-            {{/if}}
-            {{/each}}
-        </div>
-        <div class="col-xs-5 p-1 m-2">
-            <h6>Team two</h6>
-            <hr>
+            <hr class="m-1">
             {{#each idSched.teamPairList2}}
             {{#if this}}
             <div class="row m-0 p-0">
                 <div class="m-0 col-lg-12">
-                    <p class="m-0"><h6>{{this}}</h6></p>
-                    <hr>
+                    <small class="m-0 p-0">Vs</small>
+                    <hr class="m-1">
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+        <div class="mt-1 mb-2 col-xs-3 p-0 m-0">
+            <h6>Team two</h6>
+            <hr class="m-1">
+            {{#each idSched.teamPairList2}}
+            {{#if this}}
+            <div class="row m-0 p-0">
+                <div class="m-0 col-lg-12">
+                    <small class="m-0 p-0">{{this}}</small>
+                    <hr class="m-1">
                 </div>
             </div>
             {{/if}}
