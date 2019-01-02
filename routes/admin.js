@@ -21,6 +21,38 @@ router.get('/score_entry', isLoggedin, function(req, res, next){
 router.post('/score_entry', isLoggedin, function(req, res, next){
     var newScore = new Sports();
     newScore.eventName = req.body.eventName;
+    if(newScore.eventName == "Overarm Cricket"){
+        newScore.color = "text-info border-info";
+    }else if(newScore.eventName == "Athletics"){
+        newScore.color = "text-success border-success";
+    }else if(newScore.eventName == "Box Cricket"){
+        newScore.color = "text-warning border-warning";
+    }else if(newScore.eventName == "Tug Of War"){
+        newScore.color = "text-primary border-primary";
+    }else if(newScore.eventName == "Cricket"){
+        newScore.color = "text-danger border-danger";
+    }else if(newScore.eventName == "Carrom"){
+        newScore.color = "text-muted border-muted";
+    }else if(newScore.eventName == "Chess"){
+        newScore.color = "text-info border-info";
+    }else if(newScore.eventName == "Table Tennis"){
+        newScore.color = "text-success border-success";
+    }else if(newScore.eventName == "Badminton"){
+        newScore.color = "text-warning border-warning";
+    }else if(newScore.eventName == "Kho-Kho"){
+        newScore.color = "text-primary border-primary";
+    }else if(newScore.eventName == "Volleyball"){
+        newScore.color = "text-danger border-danger";
+    }else if(newScore.eventName == "Football"){
+        newScore.color = "text-muted border-muted";
+    }else if(newScore.eventName == "Throwball"){
+        newScore.color = "text-info border-info";
+    }else if(newScore.eventName == "Kabaddi"){
+        newScore.color = "text-success border-success";
+    }else if(newScore.eventName == "Dead lift"){
+        newScore.color = "text-warning border-warning";
+    }
+
     newScore.format = req.body.format;
     newScore.dateOfEvent = req.body.dateOfEvent;
     newScore.eventType = req.body.eventType;

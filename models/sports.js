@@ -6,6 +6,9 @@ var Sports = new Schema ({
     eventName: {
         type: String,
     },
+    color: {
+        type: String,
+    },
     format: {
         type: String,
     },
@@ -50,7 +53,7 @@ var Sports = new Schema ({
     },
     someDescription: {
         type: String
-    }
+    },
 })
 
 module.exports = mongoose.model('SportEvents', Sports);
