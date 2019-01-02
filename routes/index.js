@@ -37,21 +37,15 @@ router.get('/:pageNum', function(req, res, next){
     }
     var nextPage = pageNum + 1;
     var prevPage = pageNum - 1;
-    if (docs.length <= 0 || nextPage > docs.length){
-      nextPage = 1;
+    if (docs.length < 0 || nextPage > docs.length){
+      nextPage = 0;
       message = "Nothing to show ahead, you can go back to home page."; //docs end message
     }
     if(prevPage < 0){
       prevPage = 0;
     }
-    if(pageNum == 1){
-      prevPage = 0;
-    }
-    if(pageNum ==0 && prevPage ==0){
-      nextPage = 2;
-    }
-    if(pageNum == 0){
-      pageNum = 1;
+    if(pageNum==0 && nextPage==1){
+      prevPage = "";
     }
     //pasing the data to views
     res.render('home/index', {title: 'Live-Score Timeline:',scores: scoresChunks, message: message, pageNum: pageNum, nextPage: nextPage, prevPage: prevPage});
