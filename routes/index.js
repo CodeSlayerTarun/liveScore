@@ -37,7 +37,7 @@ router.get('/:pageNum', function(req, res, next){
     }
     var nextPage = pageNum + 1;
     var prevPage = pageNum - 1;
-    if (docs.length < 0 || nextPage > docs.length){
+    if (docs.length < 0 || nextPage >= docs.length){
       nextPage = 0;
       message = "Nothing to show ahead, you can go back to home page."; //docs end message
     }
