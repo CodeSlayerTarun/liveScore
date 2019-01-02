@@ -40,4 +40,10 @@ router.get('/match_schedules/:id', function(req, res, next){
     })
 })
 
+//VCET AVAHAN ABOUT PAGE
+router.get('/about', function(req, res, next){
+    res.render('home/about', {});
+  })
+  
+
 module.exports = router;
